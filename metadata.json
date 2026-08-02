@@ -1,0 +1,6 @@
+{
+  "name": "OAE & AI Paradigm E-Book",
+  "description": "An interactive E-Book application featuring the 6-part AI Paradigm series, the Organic Autonomous Entity (OAE) masterplan, World Models, Machine Economy, and Agent Payment Protocols.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
