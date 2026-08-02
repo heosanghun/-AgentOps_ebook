@@ -12,6 +12,16 @@ import { SettingsModal } from './components/SettingsModal';
 import { QuizModal } from './components/QuizModal';
 import { X, MessageSquare, Save } from 'lucide-react';
 
+function readJsonStorage<T>(key: string, fallback: T): T {
+  const saved = localStorage.getItem(key);
+  if (!saved) return fallback;
+  try {
+    return JSON.parse(saved) as T;
+  } catch {
+    return fallback;
+  }
+}
+
 export default function App() {
   // Navigation State
   const [activeBookId, setActiveBookId] = useState<string>(() => {
@@ -39,22 +49,18 @@ export default function App() {
   });
 
   // User Persistence Data
-  const [bookmarks, setBookmarks] = useState<Bookmark[]>(() => {
-    const saved = localStorage.getItem('oae_bookmarks');
-    return saved ? JSON.parse(saved) : [];
-  });
-  const [highlights, setHighlights] = useState<Highlight[]>(() => {
-    const saved = localStorage.getItem('oae_highlights');
-    return saved ? JSON.parse(saved) : [];
-  });
-  const [notes, setNotes] = useState<ChapterNote[]>(() => {
-    const saved = localStorage.getItem('oae_notes');
-    return saved ? JSON.parse(saved) : [];
-  });
-  const [completedChapters, setCompletedChapters] = useState<string[]>(() => {
-    const saved = localStorage.getItem('oae_completed');
-    return saved ? JSON.parse(saved) : ['organic:prologue'];
-  });
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>(() =>
+    readJsonStorage<Bookmark[]>('oae_bookmarks', [])
+  );
+  const [highlights, setHighlights] = useState<Highlight[]>(() =>
+    readJsonStorage<Highlight[]>('oae_highlights', [])
+  );
+  const [notes, setNotes] = useState<ChapterNote[]>(() =>
+    readJsonStorage<ChapterNote[]>('oae_notes', [])
+  );
+  const [completedChapters, setCompletedChapters] = useState<string[]>(() =>
+    readJsonStorage<string[]>('oae_completed', ['organic:prologue'])
+  );
 
   // Drawer & Modal States
   const [isAIAssistantOpen, setIsAIAssistantOpen] = useState(false);
