@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Book, Chapter, ReaderSettings, Highlight } from '../types';
 import { 
-  ChevronLeft, ChevronRight, Bookmark, Sparkles, Highlighting, 
+  ChevronLeft, ChevronRight, Bookmark, Sparkles,
   Copy, Check, Share2, Clock, FileText, CheckCircle2, MessageSquare, Plus, Lightbulb
 } from 'lucide-react';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Bookmark, Highlight, ChapterNote, Book } from '../types';
-import { X, Bookmark as BookmarkIcon, Highlighting, MessageSquare, Trash2, Copy, Download, Check, ExternalLink } from 'lucide-react';
+import { X, Bookmark as BookmarkIcon, MessageSquare, Trash2, Copy, Download, Check, ExternalLink } from 'lucide-react';
 
 interface BookmarksNotesDrawerProps {
   isOpen: boolean;
