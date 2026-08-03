@@ -1,8 +1,20 @@
 import { Book } from '../types';
 import { machineEconomyChapters } from './machineEconomyChapters';
 import { worldModelChapters } from './worldModelChapters';
+import { homoArchitectusChapters } from './homoArchitectusChapters';
 
 export const bookData: Book[] = [
+  {
+    id: 'homo_architectus',
+    volumeNumber: 7,
+    title: '제7권: 호모 아키텍투스 (Homo Architectus)',
+    subtitle: '신(神)을 설계하는 인간 — 아톰, 자율 경제, 그리고 인류의 마지막 리더십',
+    coverBadge: 'Final Leadership',
+    color: 'purple',
+    description:
+      'Embodied AI·RoboOps, 자율 주권 기업과 자본주의 3.0, 인지 자본, Reward Function 헌법, Alignment와 Kill Switch—6부작 AI 패러다임의 대단원.',
+    chapters: homoArchitectusChapters
+  },
   {
     id: 'organic',
     volumeNumber: 6,
