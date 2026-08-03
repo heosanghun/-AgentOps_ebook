@@ -24,7 +24,7 @@ export const bookData: Book[] = [
     coverBadge: 'Masterpiece',
     color: 'emerald',
     description:
-      '미술사 평행이론·3대 자본·의도된 마찰·뒤샹과 호모 아키텍투스—6부작 종착지.',
+      '미술사 평행이론·정답 디플레이션·3대 자본·뒤샹·호모 아키텍투스·루덴스—6부작 통합 종결판.',
     chapters: organicChapters
   },
   {
