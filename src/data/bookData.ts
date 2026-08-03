@@ -1,4 +1,5 @@
 import { Book } from '../types';
+import { machineEconomyChapters } from './machineEconomyChapters';
 
 export const bookData: Book[] = [
   {
@@ -160,43 +161,13 @@ export const bookData: Book[] = [
   {
     id: 'machine_economy',
     volumeNumber: 4,
-    title: '제4권: 기계들의 시장 (Machine Economy)',
-    subtitle: '에이전트가 에이전트와 거래하는 자율 경제학',
+    title: '제4권: 기계들의 시장 (The Machine Economy)',
+    subtitle: '에이전트가 에이전트와 거래하는 시대의 비즈니스와 경제학',
     coverBadge: 'A2A Protocol',
     color: 'amber',
-    description: '사람을 위한 웹 UI가 사라지고, 소프트웨어가 소프트웨어에게 수수료를 지불하며, 0.001원 단위 마이크로 결제로 움직이는 자율 경제.',
-    chapters: [
-      {
-        id: 'ch1',
-        title: '프롤로그 | 사라진 UI와 A2A 경제',
-        readingTimeMinutes: 5,
-        summary: '조달 에이전트와 공급사 에이전트가 0.03초 만에 B2B 단가를 다대다 협상하여 거래하는 화면(UI) 없는 시장의 개막.',
-        keyTakeaways: [
-          '인간 관전용 UI는 사라지고 백엔드 API 간 협상이 표준이 된다.',
-          'A2A (Agent-to-Agent): 기계 간 대규모 분산 자율 거래 체계.',
-          '사람이 클릭하기 전에 에이전트가 이미 경제를 움직인다.'
-        ],
-        content: `2027년 11월 새벽 4시. 우리 회사의 '조달 에이전트'는 전 세계 공급망을 실시간으로 스캔했고, 14개 공급사의 '영업 에이전트'들과 API를 통해 다대다(N:N) 협상을 벌여 0.03초 만에 원자재 단가를 12% 낮췄다. 이 거대한 자본의 이동 속에 인간을 위한 화면(UI)은 존재하지 않았다.
-
-당신의 에이전트가 문을 열고 나간 시장에는 이미 다른 회사들이 파견한 수백만 개의 에이전트들이 돌아다니고 있다. 바야흐로 기계가 기계와 거래하는 A2A(Agent-to-Agent) 경제의 서막이다.`
-      },
-      {
-        id: 'ch2',
-        title: 'AEO와 기계들의 금융 (Machine Finance)',
-        readingTimeMinutes: 7,
-        summary: '구글 SEO의 종말과 기계용 데이터 구조화(AEO), 머신 월렛(Machine Wallet), 그리고 SaaS를 대체하는 초미세 스트리밍 과금.',
-        keyTakeaways: [
-          'AEO (Agent Engine Optimization): llms.txt와 마크다운이 최고의 영업사원',
-          'Machine Wallet: 법인카드 대신 에이전트에 자율 예산 캡(Cap)을 부여',
-          'SaaS -> MaaS: 구독료 대신 호출당 0.001원 단위 마이크로 스트리밍 결제'
-        ],
-        content: `[SEO의 죽음, AEO의 탄생]
-에이전트는 화려한 랜딩 페이지에 감동하지 않는다. 그들은 웹페이지의 텍스트를 통째로 긁어다 파싱할 뿐이다. 이제 마케팅의 타겟은 기계(B2A)다. 검색 엔진 최적화(SEO)를 넘어, 에이전트의 RAG 데이터베이스에 먹기 좋게 데이터를 떠먹여 주는 에이전트 엔진 최적화(AEO)가 비즈니스를 지배한다. llms.txt와 마크다운이 최고의 영업 사원이다.
-
-[머신 월렛과 마이크로 페이먼트]
-에이전트에게 법인카드 대신 '머신 월렛(Machine Wallet)'이 부여된다. 구독(SaaS) 대신, 0.001원 단위로 실시간 과금하는 마이크로 페이먼트(스트리밍 경제)가 표준이 된다. 이를 통제하기 위해 재무적 킬 스위치와 자율 예산 캡(Cap)을 설정하는 FinOps 3.0이 기업의 필수 인프라가 된다.`
-      }
-    ]
+    description:
+      'B2A 전환, AEO, 머신 월렛·마이크로 페이먼트, A2A 협상과 자율 공급망, 플래시 크래시·서킷 브레이커, 에이전틱 컴퍼니까지—기계 고객 시장의 완전한 실전 매뉴얼.',
+    chapters: machineEconomyChapters
   },
   {
     id: 'cognitive',
