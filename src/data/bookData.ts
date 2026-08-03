@@ -1,5 +1,6 @@
 import { Book } from '../types';
 import { machineEconomyChapters } from './machineEconomyChapters';
+import { worldModelChapters } from './worldModelChapters';
 
 export const bookData: Book[] = [
   {
@@ -108,55 +109,9 @@ export const bookData: Book[] = [
     subtitle: '일어날 수 있는 모든 미래를 계산하는 기업',
     coverBadge: 'Core Intelligence',
     color: 'indigo',
-    description: '과거 데이터 암기를 넘어서 시장의 숨겨진 인과 법칙과 물리 구조를 시뮬레이션하고, 반사실(Counterfactual)을 추론하는 차세대 AI 아키텍처.',
-    chapters: [
-      {
-        id: 'ch1',
-        title: '프롤로그 | 상상하는 기계의 탄생',
-        readingTimeMinutes: 6,
-        summary: '단어 확률을 찍어내는 앵무새 LLM의 한계를 넘어, 행동하기 전 수백만 가지 시나리오를 머릿속에서 돌려보는 세계 모델의 정의.',
-        keyTakeaways: [
-          'LLM은 과거 패턴의 확률적 암기체에 불과하다.',
-          '세계 모델은 인과 법칙을 이해하고 오지 않은 위기를 상상한다.',
-          '인과 사다리의 최고점: 반사실(Counterfactual) 추론 지능.'
-        ],
-        content: `과거의 데이터를 암기해 다음 단어를 뱉어내는 앵무새(LLM)의 시대를 지나, 시장의 물리 법칙을 이해하고 오지 않은 위기를 상상하는 기계. 우리는 이것을 '세계 모델(World Model)'이라 부른다.
-
-알파고는 단순히 과거의 패턴을 암기하여 정답을 뱉어낸 것이 아니었다. 그 기계는 이세돌이 돌을 놓기도 전에 머릿속에서 바둑판이라는 '세계'의 물리 법칙을 완벽히 이해한 상태로, 자신이 이 수를 두었을 때 파생될 수백만 가지의 미래(시나리오)를 끝까지 가보는 '시뮬레이션'을 돌렸다.
-
-현재의 AI는 앵무새처럼 과거의 데이터를 학습해 다음 단어와 행동을 확률적으로 찍어낼 뿐, 비즈니스 세계의 숨겨진 인과관계와 물리 법칙을 이해하지 못한다. 이제 AI 혁명의 마지막 퍼즐이 맞춰진다. 과거의 데이터를 암기하는 시대를 지나, 행동하기 전에 일어날 수 있는 모든 미래를 머릿속에서 계산해 내는 기계. 인과 사다리의 꼭대기, 반사실(Counterfactual)을 추론하는 지능의 탄생이다.`
-      },
-      {
-        id: 'ch2',
-        title: '아키텍처 | 하이퍼그래프와 맘바(Mamba)',
-        readingTimeMinutes: 7,
-        summary: '복잡한 다차원 시장 전이를 표현하는 하이퍼그래프와 O(N²) 트랜스포머의 한계를 파괴하는 O(L) 선택적 상태 공간 모델(Mamba).',
-        keyTakeaways: [
-          '하이퍼그래프: 단순 1:1 관계를 넘어서는 N:N 시공간 다차원 위기 전염 지도.',
-          '전이 엔트로피(TE): 환각을 파괴하고 정밀한 인과 관계에 닻을 내리는 수학적 도구.',
-          '맘바(Mamba): SSM 기반의 선형 연산으로 초저지연 장기 기억 및 실시간 제어 달성.'
-        ],
-        content: `[하이퍼그래프(Hypergraph): 비즈니스의 인과 지도]
-세상은 A가 B에 영향을 미친다는 식의 단순한 1:1 관계로 움직이지 않는다. '기준 금리 인상'은 기술주 하락, 환율 요동, 암호화폐 유동성 증발에 N:N으로 동시다발적인 충격을 가한다. 세계 모델은 이 다차원적 위기 전염(Contagion)을 하이퍼그래프로 위상화하고, '전이 엔트로피(TE)'라는 수학적 닻을 걸어 환각을 부순다.
-
-[병목의 파괴: 트랜스포머에서 맘바(Mamba)로]
-기억(Context)이 길어질수록 연산량이 제곱(O(N²))으로 폭증하는 트랜스포머로는 HFT(고빈도 매매)나 실시간 제어가 불가능하다. 해답은 선형 시간 복잡도(O(L))를 갖는 선택적 상태 공간 모델(SSM), '맘바(Mamba)'다. 거시 경제의 방대한 역사를 은닉층에 압축하면서도 밀리초 단위로 반응하는 초저지연 장기 기억 엔진이 완성된다.`
-      },
-      {
-        id: 'ch3',
-        title: '0.1초의 태세 전환 | FiLM과 추론 증류',
-        readingTimeMinutes: 6,
-        summary: '느린 뇌(System 2)의 대규모 시뮬레이션을 빠른 손(System 1)으로 1ms 내에 전달하는 FiLM 및 C++ Lock-free 제어 모듈.',
-        keyTakeaways: [
-          'System 2 (LLM + MCTS): 만 가지 미래를 탐색하는 통찰의 뇌',
-          'System 1 (1D-CNN / C++): 1밀리초 만에 주문을 집행하는 실시간 손',
-          'FiLM (Feature-wise Linear Modulation): 재학습 없는 제로샷 파라미터 변조'
-        ],
-        content: `시장은 AI의 재학습(Fine-tuning)을 기다려주지 않는다. 적응 지체(Adaptation Lag)를 극복하기 위해 '느린 뇌(System 2, LLM+MCTS)'의 통찰을 '빠른 손(System 1, 1D-CNN)'에 지연 없이 이식해야 한다.
-
-거대 세계 모델이 "방어 모드로 전환해야 한다"는 결론을 내리면, FiLM(Feature-wise Linear Modulation) 기술과 락-프리(Lock-free) C++ 통신을 통해 단 1밀리초 이내에 실행망의 파라미터를 비틀어버린다. 재학습이 전혀 필요 없는 '생각의 속도'로 이루어지는 완벽한 제로 샷(Zero-shot) 태세 전환이다.`
-      }
-    ]
+    description:
+      '백테스트의 종말, 펄의 인과 사다리, 하이퍼그래프·Mamba·MCTS, FiLM Zero-shot 태세 전환, 금융·공급망·전략 실전과 세계의 건축가까지—3세대 지능의 완전한 청사진.',
+    chapters: worldModelChapters
   },
   {
     id: 'machine_economy',
